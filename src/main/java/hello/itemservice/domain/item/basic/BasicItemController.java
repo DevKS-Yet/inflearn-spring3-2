@@ -43,4 +43,10 @@ public class BasicItemController {
         return "basic/item";
     }
 
+    @GetMapping("/add")
+    public String addForm() {
+        log.info("BasicItemController addForm");
+        return "basic/addForm";
+    }
+
 }
