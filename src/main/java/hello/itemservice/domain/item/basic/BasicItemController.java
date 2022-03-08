@@ -35,4 +35,12 @@ public class BasicItemController {
         itemRepository.save(new Item("testB", 20000, 20));
     }
 
+    @GetMapping("/{itemId}")
+    public String item(@PathVariable Long itemId, Model model) {
+        log.info("BasicItemController item - itemId = {}", itemId);
+        Item item = itemRepository.findById(itemId);
+        model.addAttribute("item", item);
+        return "basic/item";
+    }
+
 }
