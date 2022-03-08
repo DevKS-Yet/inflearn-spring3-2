@@ -24,6 +24,7 @@ public class BasicItemController {
     public String items(Model model) {
         log.info("BasicItemController items - {}", model);
         List<Item> items = itemRepository.findAll();
+        model.addAttribute("items", items);
         return "basic/items";
     }
 
