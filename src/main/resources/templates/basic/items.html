@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+    <title>items</title>
     <meta charset="utf-8">
     <link href="../css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
 </head>
@@ -19,14 +20,15 @@
     </div>
     <hr class="my-4">
     <div>
-        <table class="table"> <thead>
-        <tr>
-            <th>ID</th>
-            <th>상품명</th>
-            <th>가격</th>
-            <th>수량</th>
-        </tr>
-        </thead>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>상품명</th>
+                <th>가격</th>
+                <th>수량</th>
+            </tr>
+            </thead>
             <tbody>
             <tr th:each="item : ${items}">
                 <td><a href="item.html" th:href="@{/basic/items/{itemId}(itemId=${item.id})}" th:text="${item.id}">회원id</a></td>
@@ -38,5 +40,6 @@
         </table>
     </div>
 </div> <!-- /container -->
+
 </body>
 </html>
