@@ -104,6 +104,7 @@ public class BasicItemController {
      */
     @PostMapping("/add")
     public String addItemV5(Item item) {
+        log.info("BasicItemController add - item = {}", item);
         itemRepository.save(item);
         return "redirect:/basic/items/" + item.getId();
     }
