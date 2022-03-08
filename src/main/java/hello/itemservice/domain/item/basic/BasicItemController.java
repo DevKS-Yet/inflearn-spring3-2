@@ -88,15 +88,24 @@ public class BasicItemController {
 //        return "basic/item";
 //    }
 
+//    /**
+//     * @ModelAttribute 자체 생략 가능
+//     * mode.addAttribute(item) 자동 추가
+//     */
+//    @PostMapping("/add")
+//    public String addItemV4(Item item) {
+//        log.info("BasicItemController addItemV4 - item = {}", item);
+//        itemRepository.save(item);
+//        return "basic/item";
+//    }
+
     /**
-     * @ModelAttribute 자체 생략 가능
-     * mode.addAttribute(item) 자동 추가
+     * PRG - Post/Redirect/Get
      */
     @PostMapping("/add")
-    public String addItemV4(Item item) {
-        log.info("BasicItemController addItemV4 - item = {}", item);
+    public String addItemV5(Item item) {
         itemRepository.save(item);
-        return "basic/item";
+        return "redirect:/basic/items/" + item.getId();
     }
 
     @GetMapping("/{itemId}/edit")
