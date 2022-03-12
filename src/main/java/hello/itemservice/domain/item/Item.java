@@ -1,8 +1,11 @@
 package hello.itemservice.domain.item;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+//@Data  // 위험할 수 있음
+@Getter @Setter
 public class Item {
 
     private Long id;
