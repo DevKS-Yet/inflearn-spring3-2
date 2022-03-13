@@ -38,6 +38,7 @@ public class BasicItemController {
         itemRepository.save(new Item("testB", 20000, 20));
     }
 
+    // 아이템 상세
     @GetMapping("/{itemId}")
     public String item(@PathVariable Long itemId, Model model) {
         log.info("BasicItemController item - itemId = {}", itemId);
