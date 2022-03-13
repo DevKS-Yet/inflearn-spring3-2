@@ -1,4 +1,4 @@
-package hello.itemservice.domain.item.basic;
+package hello.itemservice.web.basic;
 
 import hello.itemservice.domain.item.Item;
 import hello.itemservice.domain.item.ItemRepository;
@@ -20,6 +20,7 @@ public class BasicItemController {
 
     private final ItemRepository itemRepository;
 
+    // 아이템 목록 출력
     @GetMapping
     public String items(Model model) {
         log.info("BasicItemController items - model = {}", model);
