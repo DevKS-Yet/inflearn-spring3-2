@@ -63,3 +63,14 @@
 
 #### 상품 등록 처리
 - `@modelAttribute`의 name속성에 비어있다면 해당 클래스명의 첫번째 소문자의 객체로 처리
+
+#### 상품 수정
+- GET과 POST로 폼과 처리를 나눔
+- 리다이렉트
+  - 상품 수정은 마지막에 뷰 템플릿을 호출하는 대신에 상품 상세 화면으로 이동하도록 리다이렉트를 호출한다
+  - `redirect:/basic/items/{itemId}`
+    - 컨트롤러에 매핑된 `@PathVariable`의 값을 `redirect`에도 사용할 수 있다.
+    - `redirect:/basic/items/{itemId}` -> `{itemId}`는 `@PathVariable Long itemId`의 값을 그대로 사용한다.
+- 참고
+  - HTML Form 전송은 PUT, PATCH를 지원하지 않으며 GET, POST만 사용할 수 있다.
+  - PUT, PATCH는 HTTP API 전송 시에 사용
