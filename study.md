@@ -74,3 +74,8 @@
 - 참고
   - HTML Form 전송은 PUT, PATCH를 지원하지 않으며 GET, POST만 사용할 수 있다.
   - PUT, PATCH는 HTTP API 전송 시에 사용
+
+#### PRG POST/Redirect/Get
+- 실무에서 많이 사용함
+- 저장을 했을 시 리다이렉트를 하면 계속 저장이 될 수 있음. 해당 부분을 리다이렉트로 새로고침을 누르더라도 POST가 아닌 GET으로 보낼 수 있도록 바꾼 것
+- `return` 부분에서 `item.getId()`로 넣게되면 URL에 한글이나 띄어쓰기가 들어가서 문제를 초래 할 수 있다. 그것을 보완한 것이 `RedirectAttributes`이다
